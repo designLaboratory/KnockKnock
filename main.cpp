@@ -1,3 +1,7 @@
+/* uProcessors project
+	 authors: Agnieszka Lupierz
+				   	Adrian Barnas
+*/
 #include <MKL46Z4.h>
 #include "MPU6050.h"
 #include "slcd.h"
