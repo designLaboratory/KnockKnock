@@ -10,7 +10,6 @@ int MPU6050::readHL(uint8_t RegisterAdress)
 {
 	uint8_t hdata;
   uint8_t ldata;
-	int data;
 	conectionDevice.enable();
 	conectionDevice.start();
 	conectionDevice.writeByte(0x68 << 1);
