@@ -3,7 +3,7 @@
 #include "slcd.h"
 #include "timer.h"
 
-#define ACCEL_THERESHOLD 1
+#define ACCEL_THERESHOLD 16360
 
 enum State
 {
