@@ -4,11 +4,22 @@
 */
 #include "MKL46Z4.h"
 #include "KnockKnock.h"
+#include "UART.h"
 
 int main()
 {
-	KnockKnock program;
-	program.run();
+	MPU6050 sensor;
+	UART uart;
+	sensor.Init();
+	uart.init();
+	uart.transmitEnable();
+	
+	while(1)
+	{
+		uart.sendInt16(sensor.readRawAccelZ());
+	}
+	
+	
 }
 
 
