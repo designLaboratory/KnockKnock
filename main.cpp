@@ -7,6 +7,8 @@
 
 int main()
 {
+	Timer::initSysTick();
+	Timer::wait(1000);
 	KnockKnock program;
 	program.run();
 }
