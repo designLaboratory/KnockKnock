@@ -1,8 +1,11 @@
 #include "KnockKnock.h"
-
+	
 void KnockKnock::run()
 {
-		display.Initialize();
+	diodes.off(1);
+	diodes.off(2);
+	
+	display.Initialize();
 	display.Display(1000,10);
 	sensor.Init();
 	display.Display(1001,10);
@@ -43,7 +46,9 @@ State KnockKnock::on_pollingFirst()
 
 State KnockKnock::on_firstDetected()
 {
+	diodes.on(1);
 	Timer::wait(200);
+
 	
 	return POLLING_SECOND;
 }
@@ -63,13 +68,18 @@ State KnockKnock::on_oneDetected()
 {
 	display.Display(1,10);
 	Timer::wait(2000);
+	diodes.off(1);
+	diodes.off(2);
 	return POLLING_FIRST;
 }
 
 State KnockKnock::on_twoDetected()
 {
 	display.Display(2,10);
+	diodes.on(2);
 	Timer::wait(2000);
+	diodes.off(1);
+	diodes.off(2);
 	return POLLING_FIRST;
 	
 }

@@ -2,6 +2,7 @@
 #include "MPU6050.h"
 #include "slcd.h"
 #include "timer.h"
+#include "LED.h"
 
 #define ACCEL_THERESHOLD 16360
 
@@ -16,6 +17,7 @@ enum State
 
 class KnockKnock
 {
+	LED diodes;
 	slcd display;
 	MPU6050 sensor;
 	State on_pollingFirst();
