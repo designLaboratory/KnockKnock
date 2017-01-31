@@ -1,3 +1,10 @@
+////////////////////////////////////////////////
+// slcd handling for Kinetis KL46Z256         //
+// used code from microprocessors classes     //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "slcd.h"
 
 const  uint8_t slcd::LCD_Front_Pin[LCD_N_FRONT] = {LCD_FRONT0, LCD_FRONT1, LCD_FRONT2, LCD_FRONT3, LCD_FRONT4, LCD_FRONT5, LCD_FRONT6, LCD_FRONT7};
@@ -13,7 +20,6 @@ void slcd::Initialize(void)
 	LCD->GCR &= ~LCD_GCR_LCDEN_MASK; // Clear LCDEN during configuration
 	//multiplexers configuration for ports to act as sLCD controller
 	
-	//TASK 2.3 - replace XXX with pin number, and YYY with proper alternative number
 	PORTB->PCR[7] = PORT_PCR_MUX(7);
 	PORTB->PCR[8] = PORT_PCR_MUX(7);
 	PORTB->PCR[10] = PORT_PCR_MUX(7);
@@ -108,20 +114,7 @@ void slcd::Err(uint8_t number){
 			break;
 	}
 }
-/*----------------------------------------------------------------------------
-  Writing on sLCD (value) on specified position (digit)
-*
-* FP0 - Front Plane 0
-*  f |_g
-*  e |_
-*    d
-*
-* FP1 - Front Plane 1
-*    a_
-*      | b
-*    c |.
-*        dot
- *----------------------------------------------------------------------------*/
+
 void slcd::Dot(uint8_t digit)
 {
 	LCD->WF8B[LCD_Front_Pin[((2*digit)-1)]] |= LCD_S_DEC;

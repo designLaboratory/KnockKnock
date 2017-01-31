@@ -1,3 +1,10 @@
+////////////////////////////////////////////////
+// slcd handling for Kinetis KL46Z256         //
+// used code from microprocessors classes     //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "MKL46Z4.h"   /* Device header */
 #define LCD_N_FRONT 8
 // Definition of segments, each 7-segments (4 digits) is controled by two pins

@@ -1,7 +1,10 @@
-/* uProcessors project
-	 authors: Agnieszka Lupierz
-				   	Adrian Barnas
-*/
+///////////////////////////////////////////
+// Microprocessors System II Project     //
+// Authors:                              //
+// Agnieszka Lupierz                     //
+// Adrian Barnaś                         //
+///////////////////////////////////////////
+
 #include "MKL46Z4.h"
 #include "KnockKnock.h"
 

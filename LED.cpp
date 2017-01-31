@@ -1,3 +1,10 @@
+////////////////////////////////////////////////
+// LED GPIO handling for Kinetis KL46Z256     //
+// used code from microprocessors classes     //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "LED.h"
 
 const uint32_t MaskLED[] = {1UL << 5, 1UL << 29};

@@ -1,3 +1,9 @@
+////////////////////////////////////////////////
+// MPU6050 handling using i2c interface       //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "MPU6050.h"
 
 MPU6050::MPU6050():
