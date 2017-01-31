@@ -1,7 +1,9 @@
-/* uProcessors project
-	 authors: Agnieszka Lupierz
-				   	Adrian Barnas
-*/
+////////////////////////////////////////////////
+// Colecting data to detect proper referenc   //
+// in clock detecting                         //
+// Authors: Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "MKL46Z4.h"
 #include "KnockKnock.h"
 #include "UART.h"

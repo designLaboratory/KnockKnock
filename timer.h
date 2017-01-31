@@ -1,3 +1,9 @@
+////////////////////////////////////////////////
+// Time utilities for KL46Z256                //
+// using SysTick Timer                        //
+// Author:  Adrian Barnas (ABarnasFLY)        //
+////////////////////////////////////////////////
+
 #include "MKL46Z4.h"
 
 class Timer

@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////
+// KnockKnock class                                               //
+// Contains main logic of program                                 //
+// declares and defines state machine                             //
+// Diagram with polish description availble in docs               //
+// for description in english ask directly to program developers  //
+//                                                                //
+// authors: Agnieszka Lupierz (LupierzA)                          //
+//          Adrian Barnas (ABarnasFLY)                            //
+////////////////////////////////////////////////////////////////////
+
 #include "MKL46Z4.h"
 #include "MPU6050.h"
 #include "slcd.h"

@@ -1,3 +1,11 @@
+////////////////////////////////////////////////
+// i2c ( IIC) handling for Kinetis KL46Z256   //
+// Clock setup  : 1 ( Bus clock 24MHz )       //
+// I2C frequency: 100kHz                      //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "MKL46Z4.h"
 
 class i2c

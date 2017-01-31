@@ -1,3 +1,13 @@
+////////////////////////////////////////////////
+// UART2 handling for Kinetis KL46Z256        //
+// Clock setup   : 1 ( Bus clock 24MHz )      //
+// UART baudrate : 9600                       //
+// No parity                                  //
+// One stop bit                               //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include <MKL46Z4.h>
 
 class UART

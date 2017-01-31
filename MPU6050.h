@@ -1,3 +1,9 @@
+////////////////////////////////////////////////
+// MPU6050 handling using i2c interface       //
+// Authors: Adrian Barnas (ABarnasFLY)        //
+//          Agnieszka Lupierz (LupierzA)      //
+////////////////////////////////////////////////
+
 #include "MKL46Z4.h"
 #include "i2c.h"
 
