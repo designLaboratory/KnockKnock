@@ -10,12 +10,12 @@ MPU6050::MPU6050():
 conectionDevice(I2C1)
 {
 	conectionDevice.init();
+	GPIO::init_GPIO();
 }
 
 bool MPU6050::detected()
 {
-	//read from GPIO flag
-	return true;
+	return GPIO::detected();
 }
 
 int MPU6050::readHL(uint8_t RegisterAdress)
