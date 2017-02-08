@@ -12,6 +12,12 @@ conectionDevice(I2C1)
 	conectionDevice.init();
 }
 
+bool MPU6050::detected()
+{
+	//read from GPIO flag
+	return true;
+}
+
 int MPU6050::readHL(uint8_t RegisterAdress)
 {
 	uint8_t hdata;
@@ -45,7 +51,7 @@ void MPU6050::enableOnMotionInterupt(uint16_t thereshold, uint16_t duration)
 {
 	setRegister(0x1c, 1); //Configure High Pass Filter at 5Hz
 	setRegister(0x37,0); //Interupt pin configuration - active High
-	setRegister(0x1f,10); //Motion detection thereshold
+	setRegister(0x1f,10 ); //Motion detection thereshold
 	setRegister(0x20,1); //Motion minimal duration (1ms)
 	setRegister(0x69,0x13); //Motion detection control (timer increment = 1)
 	setRegister(0x38,64); //Enable Motion interupt

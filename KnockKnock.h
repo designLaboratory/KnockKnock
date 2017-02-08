@@ -19,9 +19,9 @@
 
 enum State
 {
-	POLLING_FIRST = 0,
+	WAIT_FOR_FIRST = 0,
 	FIRST_DETECTED,
-	POLLING_SECOND,
+	WAIT_FOR_SECOND,
 	ONE_DETECTED,
 	TWO_DETECTED
 };
@@ -31,8 +31,8 @@ class KnockKnock
 	LED diodes;
 	slcd display;
 	MPU6050 sensor;
-	State on_pollingFirst();
-	State on_pollingSecond();
+	State on_waitForFirst();
+	State on_waitForSecond();
 	State on_firstDetected();
 	State on_oneDetected();
 	State on_twoDetected();

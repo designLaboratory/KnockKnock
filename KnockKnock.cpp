@@ -21,19 +21,19 @@ void KnockKnock::run()
 	sensor.Init();
 	display.Display(1001,10);
 
-	State state = POLLING_FIRST;
+	State state = WAIT_FOR_FIRST;
 	while(1)
 	{
 		switch (state)
 		{
-			case POLLING_FIRST:
-				state = on_pollingFirst();
+			case WAIT_FOR_FIRST:
+				state = on_waitForFirst();
 				break;
 			case FIRST_DETECTED:
 				state = on_firstDetected();
 				break;
-			case POLLING_SECOND:
-				state = on_pollingSecond();
+			case WAIT_FOR_SECOND:
+				state = on_waitForSecond();
 				break;
 			case ONE_DETECTED:
 				state = on_oneDetected();
@@ -46,7 +46,7 @@ void KnockKnock::run()
 	
 }
 
-State KnockKnock::on_pollingFirst()
+State KnockKnock::on_waitForFirst()
 {
 	while(1)
 	{
@@ -61,10 +61,10 @@ State KnockKnock::on_firstDetected()
 	Timer::wait(200);
 
 	
-	return POLLING_SECOND;
+	return WAIT_FOR_SECOND;
 }
 
-State KnockKnock::on_pollingSecond()
+State KnockKnock::on_waitForSecond()
 {
 	Timer::setCompare(1000);
 	Timer::start();
@@ -81,7 +81,7 @@ State KnockKnock::on_oneDetected()
 	Timer::wait(2000);
 	diodes.off(1);
 	diodes.off(2);
-	return POLLING_FIRST;
+	return WAIT_FOR_FIRST;
 }
 
 State KnockKnock::on_twoDetected()
@@ -91,6 +91,6 @@ State KnockKnock::on_twoDetected()
 	Timer::wait(2000);
 	diodes.off(1);
 	diodes.off(2);
-	return POLLING_FIRST;
+	return WAIT_FOR_FIRST;
 	
 }

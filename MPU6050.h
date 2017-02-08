@@ -16,5 +16,7 @@ class MPU6050
 		void setRegister(uint8_t, uint8_t);
 		void enableOnMotionInterupt(uint16_t thereshold, uint16_t duration);
 		void Init();
+		bool detected();
+	  void clearDetected();
 		uint16_t readRawAccelZ();
 };
