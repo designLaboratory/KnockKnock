@@ -6,7 +6,7 @@
 
 
 #include "PIT_timer.h"
-
+bool PIT_timer::FlagTimeout = false;
 
 void PIT_timer::init_PIT()
 {
@@ -21,15 +21,20 @@ void PIT_timer::init_PIT()
 
 	
 }
+
+bool PIT_timer::timeout()
+{
+	return FlagTimeout;
+}
 extern "C" 
 {
-void PIT_timer::PIT_IRQHandler()
+void PIT_IRQHandler()
 {
 	NVIC_ClearPendingIRQ(PIT_IRQn);
 	if (PIT->CHANNEL[0].TFLG & PIT_TFLG_TIF_MASK)
 	{
 		PIT->CHANNEL[0].TFLG |= PIT_TFLG_TIF_MASK;
-		FlagTimeout_set();
+		PIT_timer::FlagTimeout_set();
 		PIT->CHANNEL[0].TCTRL &= ~PIT_TCTRL_TEN_MASK;
 	}
 }

@@ -18,6 +18,11 @@ bool MPU6050::detected()
 	return GPIO::detected();
 }
 
+void MPU6050::clearDetected()
+{
+	GPIO::FlagDetect_clear();
+}
+
 int MPU6050::readHL(uint8_t RegisterAdress)
 {
 	uint8_t hdata;

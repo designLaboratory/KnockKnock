@@ -14,6 +14,7 @@
 #include "slcd.h"
 #include "timer.h"
 #include "LED.h"
+#include "PIT_timer.h"
 
 #define ACCEL_THERESHOLD 16360
 
